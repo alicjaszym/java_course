@@ -3,20 +3,15 @@ package ru.stqa.java_course.sandbox;
 public class MyFirstProgram {
 
   public static void main(String[] args) {
-    hello("world");
-    hello("user");
-    hello("Alicja");
+    Point v = new Point(3, 3);
+    System.out.println("distance " + v.p1 + " between " + v.p2+"="+v.distance());
 
-    double a = 6;
-    double b = 4;
-      System.out.println("powierzchania kwadratu"+a+b+"="+area(a,b));
-  }
 
-  public static void hello(String somebody){
-      System.out.println("Hello, "+somebody+"!");
-  }
+ /*   Square s = new Square(5);
+    System.out.println("square" + s.l + "=" + s.area());
 
-  public static double area(double a, double b){
-    return   a*b;
+    Rectangle r = new Rectangle(4, 6);
+    System.out.println("powierzchania kwadratu" + r.a + r.b + "=" + r.area());
+  */
   }
 }
