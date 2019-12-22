@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="daily.PointTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-12-22T20:22:42" hostname="DESKTOP-96R034H" time="0.031">
+<testsuite name="daily.PointTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-22T20:30:46" hostname="DESKTOP-96R034H" time="0.033">
   <properties/>
-  <testcase name="Point" classname="daily.PointTest" time="0.031"/>
-  <testcase name="Points" classname="daily.PointTest" time="0.0"/>
-  <system-out><![CDATA[distancebetween(1,3),(2,4)===>1.4142135623730951
-distancebetween(3,4)===>1.0
+  <testcase name="ElsePoints" classname="daily.PointTest" time="0.033"/>
+  <system-out><![CDATA[distancebetween(1589,46)===>1543.0
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
