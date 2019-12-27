@@ -3,38 +3,15 @@ package daily;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.awt.*;
+
 public class PointTest {
 
 
   @Test
   public void Point() {
-    int x1 = 1;
-    int x2 = 2;
-    int y1 = 3;
-    int y2 = 4;
-    double dis;
-    dis = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
-    System.out.println("distancebetween" + "(" + x1 + "," + y1 + ")," + "(" + x2 + "," + y2 + ")===>" + dis);
-    Assert.assertTrue(dis == 1.4142135623730951);
-  }
+    Point p1 = new Point(1, 3);
 
-  @Test
-  public void Points() {
-    int x = 3;
-    int y = 4;
-    double dis;
-    dis = Math.sqrt((x - y) * (x - y));
-    System.out.println("distancebetween" + "(" + x + "," + y + ")===>" + dis);
-    Assert.assertTrue(dis == 1);
-  }
-
-  @Test
-  public void ElsePoints() {
-    int x = 1589;
-    int y = 46;
-    double dis;
-    dis = Math.sqrt((x - y) * (x - y));
-    System.out.println("distancebetween" + "(" + x + "," + y + ")===>" + dis);
-    Assert.assertTrue(dis == 1543.0);
+  //  Assert.assertTrue(p1.distance(p2)==2);
   }
 }
