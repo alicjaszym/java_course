@@ -20,36 +20,60 @@ public class TestCase {
     wd = new FirefoxDriver();
     wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     wd.get("http://localhost/addressbook/");
+    login("admin","secret");
+  }
+
+  private void login(String username, String passoword) {
     wd.findElement(By.name("user")).click();
     wd.findElement(By.name("user")).clear();
-    wd.findElement(By.name("user")).sendKeys("admin");
+    wd.findElement(By.name("user")).sendKeys(username);
     wd.findElement(By.name("pass")).click();
     wd.findElement(By.name("pass")).clear();
-    wd.findElement(By.name("pass")).sendKeys("secret");
+    wd.findElement(By.name("pass")).sendKeys(passoword);
     wd.findElement(By.xpath("//input[@value='Login']")).click();
   }
 
   @Test
   public void testCase() throws Exception {
+    goToCase();
+    initCase();
+    fillTheForm(new GropupData("test1", "test2", "test3"));
+    submitCaseCreation();
+    logout();
+  }
 
-    wd.findElement(By.linkText("groups")).click();
-    wd.findElement(By.name("new")).click();
+  private void logout() {
+    wd.findElement(By.linkText("Logout")).click();
+  }
+
+  private void submitCaseCreation() {
+    wd.findElement(By.linkText("group page")).click();
+  }
+
+  private void fillTheForm(GropupData gropupData) {
     wd.findElement(By.name("group_name")).click();
     wd.findElement(By.name("group_name")).clear();
-    wd.findElement(By.name("group_name")).sendKeys("test1");
+    wd.findElement(By.name("group_name")).sendKeys(gropupData.getName());
     wd.findElement(By.name("group_header")).clear();
-    wd.findElement(By.name("group_header")).sendKeys("test2");
+
+    wd.findElement(By.name("group_header")).sendKeys(gropupData.getHeader());
     wd.findElement(By.name("group_footer")).clear();
-    wd.findElement(By.name("group_footer")).sendKeys("test3");
+    wd.findElement(By.name("group_footer")).sendKeys(gropupData.getFooter());
     wd.findElement(By.name("submit")).click();
-    wd.findElement(By.linkText("group page")).click();
-    wd.findElement(By.linkText("Logout")).click();
+  }
+
+  private void initCase() {
+    wd.findElement(By.name("new")).click();
+  }
+
+  private void goToCase() {
+    wd.findElement(By.linkText("groups")).click();
   }
 
   @AfterMethod
   public void tearDown() throws Exception {
     wd.quit();
-    }
+  }
 
 
   private boolean isElementPresent(By by) {
