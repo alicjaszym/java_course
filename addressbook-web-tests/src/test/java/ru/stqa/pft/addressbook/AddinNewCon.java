@@ -12,56 +12,74 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class AddinNewCon {
-  private WebDriver driver;
+  private WebDriver wd;
 
 
   @BeforeClass(alwaysRun = true)
   public void setUp() throws Exception {
-    driver = new FirefoxDriver();
+    wd = new FirefoxDriver();
+    wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    login("admin","secret");
+  }
 
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+  private void login(String name, String password) {
+    wd.get("http://localhost/addressbook/edit.php");
+    wd.findElement(By.name("user")).click();
+    wd.findElement(By.name("user")).clear();
+    wd.findElement(By.name("user")).sendKeys(name);
+    wd.findElement(By.name("pass")).clear();
+    wd.findElement(By.name("pass")).sendKeys(password);
+    wd.findElement(By.xpath("//input[@value='Login']")).click();
   }
 
   @Test
   public void addingNewContact() throws Exception {
-    driver.get("http://localhost/addressbook/edit.php");
-    driver.findElement(By.name("user")).click();
-    driver.findElement(By.name("user")).clear();
-    driver.findElement(By.name("user")).sendKeys("admin");
-    driver.findElement(By.name("pass")).clear();
-    driver.findElement(By.name("pass")).sendKeys("secret");
-    driver.findElement(By.xpath("//input[@value='Login']")).click();
-    driver.findElement(By.linkText("add new")).click();
-    driver.findElement(By.name("firstname")).click();
-    driver.findElement(By.name("firstname")).clear();
-    driver.findElement(By.name("firstname")).sendKeys("Joe");
-    driver.findElement(By.name("middlename")).clear();
-    driver.findElement(By.name("middlename")).sendKeys("May");
-    driver.findElement(By.name("lastname")).click();
-    driver.findElement(By.name("lastname")).clear();
-    driver.findElement(By.name("lastname")).sendKeys("Doe");
-    driver.findElement(By.name("address")).click();
-    driver.findElement(By.name("address")).clear();
-    driver.findElement(By.name("address")).sendKeys("Malarska");
-    driver.findElement(By.name("home")).click();
-    driver.findElement(By.name("home")).clear();
-    driver.findElement(By.name("home")).sendKeys("123456");
-    driver.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='import'])[1]/following::td[2]")).click();
-    driver.findElement(By.id("2")).click();
-    driver.findElement(By.linkText("Logout")).click();
+    clickOnAddNew();
+    addNewContact(new ContactData("Joe","May","Doe","Malarksa","144546"));
+    clickOnContactTable();
+    logout();
+  }
+
+  private void logout() {
+    wd.findElement(By.linkText("Logout")).click();
+  }
+
+  private void clickOnContactTable() {
+    wd.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='import'])[1]/following::td[2]")).click();
+  }
+
+  private void addNewContact(ContactData contactData) {
+    wd.findElement(By.name("firstname")).click();
+    wd.findElement(By.name("firstname")).clear();
+    wd.findElement(By.name("firstname")).sendKeys(contactData.getFirstName());
+    wd.findElement(By.name("middlename")).clear();
+    wd.findElement(By.name("middlename")).sendKeys(contactData.getSecondName());
+    wd.findElement(By.name("lastname")).click();
+    wd.findElement(By.name("lastname")).clear();
+    wd.findElement(By.name("lastname")).sendKeys(contactData.getLastName());
+    wd.findElement(By.name("address")).click();
+    wd.findElement(By.name("address")).clear();
+    wd.findElement(By.name("address")).sendKeys(contactData.getAddress());
+    wd.findElement(By.name("home")).click();
+    wd.findElement(By.name("home")).clear();
+    wd.findElement(By.name("home")).sendKeys(contactData.getPhone());
+    wd.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
+  }
+
+  private void clickOnAddNew() {
+    wd.findElement(By.linkText("add new")).click();
   }
 
   @AfterClass(alwaysRun = true)
   public void tearDown() throws Exception {
-    driver.quit();
+    wd.quit();
 
     }
 
 
   private boolean isElementPresent(By by) {
     try {
-      driver.findElement(by);
+      wd.findElement(by);
       return true;
     } catch (NoSuchElementException e) {
       return false;
@@ -70,7 +88,7 @@ public class AddinNewCon {
 
   private boolean isAlertPresent() {
     try {
-      driver.switchTo().alert();
+      wd.switchTo().alert();
       return true;
     } catch (NoAlertPresentException e) {
       return false;
