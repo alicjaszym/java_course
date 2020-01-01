@@ -18,6 +18,9 @@ public class GroupHelper extends HelperBase {
     type(By.name("group_name"), gropupData.getName());
     type(By.name("group_header"), gropupData.getHeader());
     type(By.name("group_footer"), gropupData.getFooter());
+  }
+
+  public void submitFormButton() {
     click(By.name("submit"));
   }
 
@@ -31,5 +34,13 @@ public class GroupHelper extends HelperBase {
 
   public void deleteSelectedGroup() {
     click(By.name("delete"));
+  }
+
+  public void initGroupModification() {
+    click(By.name("edit"));
+  }
+
+  public void submitGroupModification() {
+    click(By.name("update"));
   }
 }

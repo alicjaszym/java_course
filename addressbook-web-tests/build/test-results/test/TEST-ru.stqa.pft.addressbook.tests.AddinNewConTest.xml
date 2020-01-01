@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.addressbook.tests.AddinNewConTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-01T18:19:43" hostname="DESKTOP-96R034H" time="5.131">
-  <properties/>
-  <testcase name="addingNewContact" classname="ru.stqa.pft.addressbook.tests.AddinNewConTest" time="5.131"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
