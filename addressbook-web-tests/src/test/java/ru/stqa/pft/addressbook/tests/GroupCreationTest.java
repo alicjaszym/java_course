@@ -7,10 +7,10 @@ public class GroupCreationTest extends TestBase {
 
   @Test
   public void groupCase() throws Exception {
-    app.goToCase();
-    app.initCase();
-    app.fillTheForm(new GropupData("G1", "G2", "G3"));
-    app.goBackToGroupPage();
+    app.getNavigationHelper().goToGroupPage();
+    app.getGroupHelper().initCase();
+    app.getGroupHelper().fillTheForm(new GropupData("G1", "G2", "G3"));
+    app.getGroupHelper().goBackToGroupPage();
     app.logout();
   }
 }
