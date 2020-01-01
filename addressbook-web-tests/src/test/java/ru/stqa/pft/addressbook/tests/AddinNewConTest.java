@@ -9,6 +9,7 @@ public class AddinNewConTest extends TestBase {
   public void addingNewContact() throws Exception {
     app.getContactHelper().clickOnAddNew();
     app.getContactHelper().addNewContact(new ContactData("Joe","May","Doe","Malarksa","144546"));
+    app.getContactHelper().clickSubmitContactCreation();
     app.getContactHelper().clickOnContactTable();
     app.logout();
   }
