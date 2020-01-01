@@ -2,10 +2,10 @@ package ru.stqa.pft.addressbook;
 
 import org.testng.annotations.Test;
 
-public class TestCase extends TestBase{
+public class GroupCase extends TestBase{
 
   @Test
-  public void testCase() throws Exception {
+  public void groupCase() throws Exception {
     goToCase();
     initCase();
     fillTheForm(new GropupData("G1", "G2", "G3"));
