@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="daily.EqautionTests" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-01-05T14:05:49" hostname="DESKTOP-96R034H" time="0.0">
+  <properties/>
+  <testcase name="test0" classname="daily.EqautionTests" time="0.0"/>
+  <testcase name="test1" classname="daily.EqautionTests" time="0.0"/>
+  <testcase name="test2" classname="daily.EqautionTests" time="0.0"/>
+  <testcase name="testConstant" classname="daily.EqautionTests" time="0.0"/>
+  <testcase name="testLinear" classname="daily.EqautionTests" time="0.0"/>
+  <testcase name="testZero" classname="daily.EqautionTests" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
