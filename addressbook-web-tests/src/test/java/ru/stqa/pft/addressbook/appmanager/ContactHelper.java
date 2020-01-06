@@ -3,7 +3,6 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 
 
@@ -24,10 +23,10 @@ public class ContactHelper extends HelperBase {
     type(By.name("address"), contactData.getAddress());
     type(By.name("home"), contactData.getPhone());
 
-    if(creation){
+    if(creation && isElementPresent(By.name("new_group"))){
       new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
     } else {
-      Assert.assertFalse(isElementPresent(By.name("new_group")));
+      return;
     }
 }
 
@@ -36,7 +35,11 @@ public class ContactHelper extends HelperBase {
   }
 
   public void clickOnHome(){
-   click(By.linkText("home"));
+    if(isElementPresent(By.tagName("id"))
+            && wd.findElement(By.tagName("id")).getText().equals("search_count")
+            &&isElementPresent(By.name("new"))){
+      return;}
+    click(By.linkText("home"));
   }
 
   public void clickOnAddNew() {
@@ -58,6 +61,17 @@ public class ContactHelper extends HelperBase {
 
   public void clickOnUpdateButton() {
     click(By.xpath("(//input[@name='update'])[2]"));
+  }
+
+  public void createContact(ContactData contact,boolean con) {
+    clickOnAddNew();
+    addNewContact(contact,con);
+    clickSubmitContactCreation();
+    clickOnContactTable();
+  }
+
+  public boolean isThereContact() {
+    return  isElementPresent(By.id("25"));
   }
 }
 

@@ -11,13 +11,14 @@ public class GroupHelper extends HelperBase {
   }
 
   public void goBackToGroupPage() {
-    click(By.linkText("group page"));
-  }
+      click(By.linkText("group page"));
+    }
 
   public void fillTheForm(GropupData gropupData) {
     type(By.name("group_name"), gropupData.getName());
     type(By.name("group_header"), gropupData.getHeader());
     type(By.name("group_footer"), gropupData.getFooter());
+
   }
 
   public void submitFormButton() {
@@ -42,5 +43,20 @@ public class GroupHelper extends HelperBase {
 
   public void submitGroupModification() {
     click(By.name("update"));
+  }
+
+  public void logout() {
+    wd.findElement(By.linkText("Logout")).click();
+  }
+
+  public void createGroup(GropupData group) {
+   initCase();
+   fillTheForm(group);
+   submitFormButton();
+   goBackToGroupPage();
+  }
+  public boolean isThereAGroup() {
+
+    return  isElementPresent(By.name("selected[]"));
   }
 }
