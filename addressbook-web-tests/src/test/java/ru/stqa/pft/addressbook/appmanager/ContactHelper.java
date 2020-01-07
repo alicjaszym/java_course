@@ -71,7 +71,7 @@ public class ContactHelper extends HelperBase {
   }
 
   public boolean isThereContact() {
-    return  isElementPresent(By.id("25"));
+    return  isElementPresent(By.name("selected[]"));
   }
 }
 
