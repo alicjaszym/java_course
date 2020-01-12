@@ -11,7 +11,9 @@ public class ContactHelper extends HelperBase {
   public ContactHelper(WebDriver wd){
     super(wd);
   }
-  public void clickOnContactTable() {
+
+  public void clickOnContactTable()  {
+
     click(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='import'])[1]/following::td[2]"));
   }
 
@@ -63,7 +65,7 @@ public class ContactHelper extends HelperBase {
     click(By.xpath("(//input[@name='update'])[2]"));
   }
 
-  public void createContact(ContactData contact,boolean con) {
+  public void createContact(ContactData contact,boolean con)  {
     clickOnAddNew();
     addNewContact(contact,con);
     clickSubmitContactCreation();
@@ -72,6 +74,11 @@ public class ContactHelper extends HelperBase {
 
   public boolean isThereContact() {
     return  isElementPresent(By.name("selected[]"));
+  }
+
+  public int getCountactCount() {
+    System.out.println(wd.findElements(By.name("selected[]")).size());
+    return wd.findElements(By.name("selected[]")).size();
   }
 }
 
