@@ -4,22 +4,29 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.GropupData;
 
+import java.util.HashSet;
+import java.util.List;
+
 public class GroupModificationTests extends TestBase {
 
  @Test
  public void testGroupModification(){
    app.getNavigationHelper().goToGroupPage();
-   int before = app.getGroupHelper().getGroupCount();
    if(!app.getGroupHelper().isThereAGroup()){
-     app.getGroupHelper().createGroup(new GropupData("Manana", null, null));
+     app.getGroupHelper().createGroup(new GropupData(null,"Manana", null, null));
    }
-   app.getGroupHelper().selectGroup();
+   List<GropupData> before = app.getGroupHelper().getGroupList();
+   app.getGroupHelper().selectGroup(before.size() -1);
    app.getGroupHelper().initGroupModification();
-   app.getGroupHelper().fillTheForm(new GropupData("Modified", null, null));
+   GropupData group = new GropupData(before.get(before.size()-1).getId(),"Test1", null, null);
+   app.getGroupHelper().fillTheForm(group);
    app.getGroupHelper().submitGroupModification();
    app.getGroupHelper().goBackToGroupPage();
-   int after = app.getGroupHelper().getGroupCount();
-   Assert.assertEquals(after, before);
+   List<GropupData> after = app.getGroupHelper().getGroupList();
+   Assert.assertEquals(after.size(), before.size());
 
+   before.remove(before.size() -1);
+   before.add(group);
+   Assert.assertEquals(new HashSet<Object>(before),new HashSet<Object>(after));
  }
 }

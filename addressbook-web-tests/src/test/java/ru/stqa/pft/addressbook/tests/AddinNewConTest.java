@@ -4,13 +4,15 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 
+import java.util.List;
+
 public class AddinNewConTest extends TestBase {
 
   @Test
   public void addingNewContact() throws Exception {
-    int before = app.getContactHelper().getCountactCount();
-    app.getContactHelper().createContact(new ContactData("Anna",null,null,null,"344546",null),false);
-    int after = app.getContactHelper().getCountactCount();
-    Assert.assertEquals(after, before + 1);
+    List<ContactData> before = app.getContactHelper().getContactList();
+    app.getContactHelper().createContact(new ContactData(null,"Anna",null,null,null,"344546",null),false);
+    List<ContactData> after = app.getContactHelper().getContactList();
+    Assert.assertEquals(after.size(), before.size() + 1);
   }
 }
