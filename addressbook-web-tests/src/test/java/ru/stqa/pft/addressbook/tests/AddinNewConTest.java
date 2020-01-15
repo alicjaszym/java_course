@@ -11,8 +11,10 @@ public class AddinNewConTest extends TestBase {
   @Test
   public void addingNewContact() throws Exception {
     List<ContactData> before = app.getContactHelper().getContactList();
+    System.out.println("to"+before);
     app.getContactHelper().createContact(new ContactData(null,"Anna",null,null,null,"344546",null),false);
     List<ContactData> after = app.getContactHelper().getContactList();
+    System.out.println( after);
     Assert.assertEquals(after.size(), before.size() + 1);
   }
 }
