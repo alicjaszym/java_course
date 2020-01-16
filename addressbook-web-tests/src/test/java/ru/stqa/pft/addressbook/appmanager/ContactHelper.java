@@ -93,8 +93,10 @@ public class ContactHelper extends HelperBase {
     System.out.println("elo"+elements);
     for(WebElement element:elements) {
       String name = element.getText();
-      String id = element.findElement(By.tagName("input")).getAttribute("value");
-      ContactData contact = new ContactData(id, name, null, null, null,null,null);
+      String na = name.substring(0,7);
+      String nan = name.substring(8,10);
+      int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+      ContactData contact = new ContactData(id, nan , null,na, null,null,null);
       contacts.add(contact);
       System.out.println(contacts.size());
     }
