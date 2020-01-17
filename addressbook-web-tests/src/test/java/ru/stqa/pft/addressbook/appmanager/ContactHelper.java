@@ -92,11 +92,11 @@ public class ContactHelper extends HelperBase {
     List<WebElement> elements = wd.findElements(By.xpath("//tr[contains(@name,'entry')]"));
     System.out.println("elo"+elements);
     for(WebElement element:elements) {
-      String name = element.getText();
-      String na = name.substring(0,7);
-      String nan = name.substring(8,10);
+      List<WebElement> cells = element.findElements(By.tagName("td"));
+      String name = cells.get(2).getText();
+      String na = cells.get(1).getText();
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-      ContactData contact = new ContactData(id, nan , null,na, null,null,null);
+      ContactData contact = new ContactData(id, name , null,na, null,null,null);
       contacts.add(contact);
       System.out.println(contacts.size());
     }
