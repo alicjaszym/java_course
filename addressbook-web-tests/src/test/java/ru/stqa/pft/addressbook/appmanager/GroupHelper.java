@@ -54,7 +54,7 @@ public class GroupHelper extends HelperBase {
     wd.findElement(By.linkText("Logout")).click();
   }
 
-  public void createGroup(GropupData group) {
+  public void create(GropupData group) {
    initCase();
    fillTheForm(group);
    submitFormButton();
@@ -70,7 +70,21 @@ public class GroupHelper extends HelperBase {
     return wd.findElements(By.name("selected[]")).size();
   }
 
-  public List<GropupData> getGroupList() {
+  public void delete(int index) {
+   selectGroup(index);
+   deleteSelectedGroup();
+    goBackToGroupPage();
+  }
+
+  public void modify(int index, GropupData group) {
+    selectGroup(index);
+    initGroupModification();
+    fillTheForm(group);
+    submitGroupModification();
+    goBackToGroupPage();
+  }
+
+  public List<GropupData> list() {
     List<GropupData> groups = new ArrayList<GropupData>();
     List<WebElement> elements = wd.findElements(By.cssSelector("span.group"));
     for(WebElement element:elements){

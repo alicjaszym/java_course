@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.tests.ContactDeletionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-19T18:57:52" hostname="DESKTOP-96R034H" time="25.832">
+  <properties/>
+  <testcase name="testContactDeletion" classname="ru.stqa.pft.addressbook.tests.ContactDeletionTest" time="25.832"/>
+  <system-out><![CDATA[elo[[[FirefoxDriver: firefox on WINDOWS (7fa73c73-0f3a-4b84-96a1-d1158decff5c)] -> xpath: //tr[contains(@name,'entry')]], [[FirefoxDriver: firefox on WINDOWS (7fa73c73-0f3a-4b84-96a1-d1158decff5c)] -> xpath: //tr[contains(@name,'entry')]], [[FirefoxDriver: firefox on WINDOWS (7fa73c73-0f3a-4b84-96a1-d1158decff5c)] -> xpath: //tr[contains(@name,'entry')]]]
+1
+2
+3
+elo[[[FirefoxDriver: firefox on WINDOWS (7fa73c73-0f3a-4b84-96a1-d1158decff5c)] -> xpath: //tr[contains(@name,'entry')]], [[FirefoxDriver: firefox on WINDOWS (7fa73c73-0f3a-4b84-96a1-d1158decff5c)] -> xpath: //tr[contains(@name,'entry')]]]
+1
+2
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

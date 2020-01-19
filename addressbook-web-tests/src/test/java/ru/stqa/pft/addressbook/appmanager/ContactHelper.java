@@ -71,11 +71,17 @@ public class ContactHelper extends HelperBase {
     click(By.xpath("(//input[@name='update'])[2]"));
   }
 
-  public void createContact(ContactData contact,boolean con)  {
+  public void create(ContactData contact, boolean con)  {
     clickOnAddNew();
     addNewContact(contact,con);
     clickSubmitContactCreation();
     clickOnContactTable();
+  }
+
+  public void modify(int index, ContactData contact) {
+    editContact(index);
+    addNewContact(contact,false) ;
+    clickOnUpdateButton();
   }
 
   public boolean isThereContact() {
@@ -87,11 +93,17 @@ public class ContactHelper extends HelperBase {
     return wd.findElements(By.name("selected[]")).size();
   }
 
-  public List<ContactData> getContactList() {
-    List<ContactData> contacts = new ArrayList<ContactData>();
-    List<WebElement> elements = wd.findElements(By.xpath("//tr[contains(@name,'entry')]"));
-    System.out.println("elo"+elements);
-    for(WebElement element:elements) {
+  public void delete(int index) {
+    clickOnContact(index);
+    deleteContact();
+    clickOnHome();
+  }
+
+  public List<ContactData> list() {
+     List<ContactData> contacts = new ArrayList<ContactData>();
+     List<WebElement> elements = wd.findElements(By.xpath("//tr[contains(@name,'entry')]"));
+     System.out.println("elo"+elements);
+     for(WebElement element:elements) {
       List<WebElement> cells = element.findElements(By.tagName("td"));
       String name = cells.get(2).getText();
       String na = cells.get(1).getText();
