@@ -84,13 +84,13 @@
       <recent name="ru.stqa.pft.addressbook" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ContactDeletionTest.testContactDeletion">
-    <configuration name="AddinNewConTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.GroupCreationTest.groupCase">
+    <configuration name="AddinNewConTest.addingNewContact" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/../addressbook-web-tests" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ru.stqa.pft.addressbook.tests.AddinNewConTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;ru.stqa.pft.addressbook.tests.AddinNewConTest.addingNewContact&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -145,26 +145,6 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ContactModificationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/../addressbook-web-tests" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ru.stqa.pft.addressbook.tests.ContactModificationTest&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="ContactModificationTest.testContactModification" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -185,13 +165,33 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="GroupCreationTest.groupCase" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../addressbook-web-tests" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;ru.stqa.pft.addressbook.tests.GroupCreationTest.groupCase&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.GroupCreationTest.groupCase" />
+        <item itemvalue="Gradle.AddinNewConTest.addingNewContact" />
         <item itemvalue="Gradle.ContactDeletionTest.testContactDeletion" />
         <item itemvalue="Gradle.ContactDeletionTest" />
         <item itemvalue="Gradle.ContactModificationTest.testContactModification" />
-        <item itemvalue="Gradle.AddinNewConTest" />
-        <item itemvalue="Gradle.ContactModificationTest" />
       </list>
     </recent_temporary>
   </component>
@@ -240,10 +240,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="72" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1578234275852" />
-    <state x="574" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1579199138871">
+    <state x="574" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1579625380844">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1579199138871" />
+    <state x="574" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1579625380844" />
     <state x="477" y="166" key="#com.intellij.refactoring.memberPullUp.PullUpDialog" timestamp="1578251321684">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -256,22 +256,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="577" y="123" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1577793237322" />
-    <state width="1493" height="156" key="GridCell.Tab.0.bottom" timestamp="1579460241480">
+    <state width="1493" height="156" key="GridCell.Tab.0.bottom" timestamp="1579626788601">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="156" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579460241480" />
-    <state width="1493" height="156" key="GridCell.Tab.0.center" timestamp="1579460241480">
+    <state width="1493" height="156" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579626788601" />
+    <state width="1493" height="156" key="GridCell.Tab.0.center" timestamp="1579626788601">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="156" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1579460241480" />
-    <state width="1493" height="156" key="GridCell.Tab.0.left" timestamp="1579460241480">
+    <state width="1493" height="156" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1579626788601" />
+    <state width="1493" height="156" key="GridCell.Tab.0.left" timestamp="1579626788601">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="156" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1579460241480" />
-    <state width="1493" height="156" key="GridCell.Tab.0.right" timestamp="1579460241480">
+    <state width="1493" height="156" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1579626788601" />
+    <state width="1493" height="156" key="GridCell.Tab.0.right" timestamp="1579626788601">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="156" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1579460241480" />
+    <state width="1493" height="156" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1579626788601" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1578838493133">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -332,5 +332,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="475" y="42" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1579460049870" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1579626155433">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1579626155433" />
   </component>
 </project>

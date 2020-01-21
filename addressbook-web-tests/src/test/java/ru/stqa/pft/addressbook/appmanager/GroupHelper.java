@@ -90,8 +90,7 @@ public class GroupHelper extends HelperBase {
     for(WebElement element:elements){
       String name= element.getText();
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-      GropupData group = new GropupData(id,name,null,null);
-      groups.add(group);
+      groups.add(new GropupData().withId(id).withName(name));
       System.out.println(groups.size());
     }
     return groups;

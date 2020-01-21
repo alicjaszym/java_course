@@ -3,27 +3,29 @@ package ru.stqa.pft.addressbook.model;
 import java.util.Objects;
 
 public class GropupData {
-  private  int id;
-  private final String name;
-  private final String header;
-  private final String footer;
+  private  int id = Integer.MAX_VALUE;
+  private  String name;
+  private  String header;
+  private  String footer;
 
-  public GropupData(int id,String name, String header, String footer) {
-    this.id = id;
-    this.name = name;
+  public GropupData withtHeader(String header) {
     this.header = header;
-    this.footer = footer;
+    return  this;
   }
 
-  public GropupData(String name, String header, String footer) {
-    this.id = Integer.MAX_VALUE;
-    this.name = name;
-    this.header = header;
+  public GropupData withFooter(String footer) {
     this.footer = footer;
+    return this;
   }
 
-  public void setId(int id) {
+  public GropupData withName(String name) {
+    this.name = name;
+    return this;
+  }
+
+  public GropupData withId(int id) {
     this.id = id;
+    return this;
   }
 
   @Override

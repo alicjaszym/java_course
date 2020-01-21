@@ -14,7 +14,7 @@ public class GroupDeletionTests extends TestBase {
   public void ensurePreconditions() {
     app.goTo().groupPage();
     if (app.contact().list().size()==0) {
-      app.group().create(new GropupData("Manana", null, null));
+      app.group().create(new GropupData().withName("Coma"));
     }
   }
 
