@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.Contacts;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -62,10 +62,7 @@ public class ContactHelper extends HelperBase {
     wd.switchTo().alert().accept();
   }
 
-  public void editContact(int index) {
-    wd.findElements(By.xpath("//img[@alt='Edit']")).get(index).click();
-    //click(By.xpath("//img[@alt='Edit']"));
-  }
+
 
   public void clickOnUpdateButton() {
     click(By.xpath("(//input[@name='update'])[2]"));
@@ -78,32 +75,22 @@ public class ContactHelper extends HelperBase {
     clickOnContactTable();
   }
 
-  public void modify(int index, ContactData contact) {
-    editContact(index);
-    addNewContact(contact,false) ;
+  public void editContactById(int id) {
+    // wd.findElements(By.xpath("//img[@alt='Edit']")).get(index).click();
+  wd.findElement(By.cssSelector("a[href='edit.php?id=" + id + "']")).click();
+  }
+  public void modify( ContactData contact) {
+    editContactById(contact.getId());
+    addNewContact(contact, false);
     clickOnUpdateButton();
   }
 
-  public boolean isThereContact() {
-    return  isElementPresent(By.name("selected[]"));
-  }
 
-  public int getCountactCount() {
-    System.out.println(wd.findElements(By.name("selected[]")).size());
-    return wd.findElements(By.name("selected[]")).size();
-  }
-
-  public void delete(int index) {
-    clickOnContact(index);
-    deleteContact();
-    clickOnHome();
-  }
-
-  public List<ContactData> list() {
-     List<ContactData> contacts = new ArrayList<ContactData>();
-     List<WebElement> elements = wd.findElements(By.xpath("//tr[contains(@name,'entry')]"));
-     System.out.println("elo"+elements);
-     for(WebElement element:elements) {
+  public Contacts all() {
+    Contacts contacts = new  Contacts();
+    List<WebElement> elements = wd.findElements(By.xpath("//tr[contains(@name,'entry')]"));
+    System.out.println("elo" + elements);
+    for (WebElement element : elements) {
       List<WebElement> cells = element.findElements(By.tagName("td"));
       String name = cells.get(2).getText();
       String na = cells.get(1).getText();
@@ -112,6 +99,16 @@ public class ContactHelper extends HelperBase {
       System.out.println(contacts.size());
     }
     return contacts;
+  }
+  public void clickOnContactById(int id){
+    wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
+    //click(By.xpath("//*[@type='checkbox']"));
+  }
+
+  public void delete(ContactData contact) {
+    clickOnContactById(contact.getId());
+    deleteContact();
+    clickOnHome();
   }
 }
 

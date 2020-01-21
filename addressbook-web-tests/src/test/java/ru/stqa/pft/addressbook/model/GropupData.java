@@ -33,12 +33,13 @@ public class GropupData {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     GropupData that = (GropupData) o;
-    return Objects.equals(name, that.name);
+    return id == that.id &&
+            Objects.equals(name, that.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name);
+    return Objects.hash(id, name);
   }
 
   @Override

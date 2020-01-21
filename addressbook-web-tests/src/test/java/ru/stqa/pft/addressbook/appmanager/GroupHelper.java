@@ -4,9 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ru.stqa.pft.addressbook.model.GropupData;
+import ru.stqa.pft.addressbook.model.Groups;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class GroupHelper extends HelperBase {
 
@@ -50,9 +52,7 @@ public class GroupHelper extends HelperBase {
     click(By.name("update"));
   }
 
-  public void logout() {
-    wd.findElement(By.linkText("Logout")).click();
-  }
+
 
   public void create(GropupData group) {
    initCase();
@@ -60,32 +60,19 @@ public class GroupHelper extends HelperBase {
    submitFormButton();
    goBackToGroupPage();
   }
-  public boolean isThereAGroup() {
 
-    return  isElementPresent(By.name("selected[]"));
-  }
 
-  public int getGroupCount() {
-    System.out.println(wd.findElements(By.name("selected[]")).size());
-    return wd.findElements(By.name("selected[]")).size();
-  }
-
-  public void delete(int index) {
-   selectGroup(index);
-   deleteSelectedGroup();
-    goBackToGroupPage();
-  }
-
-  public void modify(int index, GropupData group) {
-    selectGroup(index);
+  public void modify( GropupData group) {
+    selectGroupById(group.getId());
     initGroupModification();
     fillTheForm(group);
     submitGroupModification();
     goBackToGroupPage();
   }
 
-  public List<GropupData> list() {
-    List<GropupData> groups = new ArrayList<GropupData>();
+
+  public Groups all() {
+    Groups groups = new Groups();
     List<WebElement> elements = wd.findElements(By.cssSelector("span.group"));
     for(WebElement element:elements){
       String name= element.getText();
@@ -94,5 +81,16 @@ public class GroupHelper extends HelperBase {
       System.out.println(groups.size());
     }
     return groups;
+  }
+
+  public void selectGroupById(int id) {
+    wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
+
+  }
+
+  public void delete(GropupData group) {
+    selectGroupById(group.getId());
+    deleteSelectedGroup();
+    goBackToGroupPage();
   }
 }
