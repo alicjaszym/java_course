@@ -10,12 +10,38 @@ public class ContactData {
   private  String address;
   private  String phone;
   private  String group;
+  private String mobilePhone;
+  private String workPhone;
+  private String homePhone;
 
   public ContactData withFirstName(String firstName) {
     this.firstName = firstName;
     return this;
   }
+  public ContactData withMobilePhone(String mobilePhone) {
+    this.mobilePhone = mobilePhone;
+    return this;
+  }
 
+  public ContactData withWorkPhone(String workPhone) {
+    this.mobilePhone = workPhone;
+    return this;
+  }
+  public ContactData withHomePhone(String homePhone) {
+    this.mobilePhone = homePhone;
+    return this;
+  }
+  public String getMobilePhone() {
+    return mobilePhone;
+  }
+
+  public String getWorkPhone() {
+    return workPhone;
+  }
+
+  public String getHomePhone() {
+    return homePhone;
+  }
   public ContactData withSecondName(String secondName) {
     this.secondName = secondName;
     return this;
@@ -54,12 +80,13 @@ public class ContactData {
     ContactData that = (ContactData) o;
     return id == that.id &&
             Objects.equals(firstName, that.firstName) &&
-            Objects.equals(lastName, that.lastName);
+            Objects.equals(lastName, that.lastName) &&
+            Objects.equals(mobilePhone, that.mobilePhone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstName, lastName);
+    return Objects.hash(id, firstName, lastName, mobilePhone);
   }
 
   @Override
@@ -68,6 +95,7 @@ public class ContactData {
             "id='" + id + '\'' +
             ", firstName='" + firstName + '\'' +
             ", lastName='" + lastName + '\'' +
+            ", mobilePhone='" + mobilePhone + '\'' +
             '}';
   }
 
@@ -78,6 +106,8 @@ public class ContactData {
   public String getFirstName() {
     return firstName;
   }
+
+
 
   public String getSecondName() {
     return secondName;

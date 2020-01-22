@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.addressbook.tests.ContactModificationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-21T19:59:31" hostname="DESKTOP-96R034H" time="4.768">
+<testsuite name="ru.stqa.pft.addressbook.tests.ContactModificationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-22T19:00:34" hostname="DESKTOP-96R034H" time="4.531">
   <properties/>
-  <testcase name="testContactModification" classname="ru.stqa.pft.addressbook.tests.ContactModificationTest" time="4.768"/>
-  <system-out><![CDATA[elo[[[FirefoxDriver: firefox on WINDOWS (b0617b4e-0464-4d94-bc6f-934307ad91d0)] -> xpath: //tr[contains(@name,'entry')]], [[FirefoxDriver: firefox on WINDOWS (b0617b4e-0464-4d94-bc6f-934307ad91d0)] -> xpath: //tr[contains(@name,'entry')]], [[FirefoxDriver: firefox on WINDOWS (b0617b4e-0464-4d94-bc6f-934307ad91d0)] -> xpath: //tr[contains(@name,'entry')]], [[FirefoxDriver: firefox on WINDOWS (b0617b4e-0464-4d94-bc6f-934307ad91d0)] -> xpath: //tr[contains(@name,'entry')]]]
+  <testcase name="testContactModification" classname="ru.stqa.pft.addressbook.tests.ContactModificationTest" time="4.531"/>
+  <system-out><![CDATA[elo[[[FirefoxDriver: firefox on WINDOWS (75282386-fd00-43e1-bb41-1439b8252052)] -> xpath: //tr[contains(@name,'entry')]], [[FirefoxDriver: firefox on WINDOWS (75282386-fd00-43e1-bb41-1439b8252052)] -> xpath: //tr[contains(@name,'entry')]], [[FirefoxDriver: firefox on WINDOWS (75282386-fd00-43e1-bb41-1439b8252052)] -> xpath: //tr[contains(@name,'entry')]]]
 1
 2
 3
-4
-elo[[[FirefoxDriver: firefox on WINDOWS (b0617b4e-0464-4d94-bc6f-934307ad91d0)] -> xpath: //tr[contains(@name,'entry')]], [[FirefoxDriver: firefox on WINDOWS (b0617b4e-0464-4d94-bc6f-934307ad91d0)] -> xpath: //tr[contains(@name,'entry')]], [[FirefoxDriver: firefox on WINDOWS (b0617b4e-0464-4d94-bc6f-934307ad91d0)] -> xpath: //tr[contains(@name,'entry')]], [[FirefoxDriver: firefox on WINDOWS (b0617b4e-0464-4d94-bc6f-934307ad91d0)] -> xpath: //tr[contains(@name,'entry')]]]
-1
-2
-3
-4
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

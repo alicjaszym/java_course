@@ -6,9 +6,7 @@ import org.openqa.selenium.WebElement;
 import ru.stqa.pft.addressbook.model.GropupData;
 import ru.stqa.pft.addressbook.model.Groups;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class GroupHelper extends HelperBase {
 
@@ -58,6 +56,7 @@ public class GroupHelper extends HelperBase {
    initCase();
    fillTheForm(group);
    submitFormButton();
+    groupCache=null;
    goBackToGroupPage();
   }
 
@@ -67,20 +66,27 @@ public class GroupHelper extends HelperBase {
     initGroupModification();
     fillTheForm(group);
     submitGroupModification();
+    groupCache=null;
     goBackToGroupPage();
   }
 
+public int count(){
+    return wd.findElements(By.name("selected[]")).size();
+}
 
   public Groups all() {
-    Groups groups = new Groups();
+    if (groupCache !=null){
+      return new Groups(groupCache);
+    }
+    groupCache = new Groups();
     List<WebElement> elements = wd.findElements(By.cssSelector("span.group"));
     for(WebElement element:elements){
       String name= element.getText();
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-      groups.add(new GropupData().withId(id).withName(name));
-      System.out.println(groups.size());
+      groupCache.add(new GropupData().withId(id).withName(name));
+      System.out.println(groupCache.size());
     }
-    return groups;
+    return new Groups(groupCache);
   }
 
   public void selectGroupById(int id) {
@@ -88,9 +94,13 @@ public class GroupHelper extends HelperBase {
 
   }
 
+  private Groups groupCache=null;
+
+
   public void delete(GropupData group) {
     selectGroupById(group.getId());
     deleteSelectedGroup();
+    groupCache=null;
     goBackToGroupPage();
   }
 }

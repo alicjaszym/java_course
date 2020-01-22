@@ -14,10 +14,22 @@ public class AddinNewConTest extends TestBase {
     Contacts before = app.contact().all();
     ContactData contact = new ContactData().withFirstName("Mo").withLastName("Bunilla");
     app.contact().create(contact,false);
+    assertThat(app.contact().count(), equalTo(before.size() + 1));
     Contacts after = app.contact().all();
     System.out.println( after);
-    assertThat(after.size(), equalTo(before.size() + 1));
     assertThat(after, equalTo(
             before.withAdded(contact.withId(after.stream().mapToInt((g)->g.getId()).max().getAsInt()))));
+  }
+
+  @Test
+  public void addingNewContactBad() throws Exception {
+    Contacts before = app.contact().all();
+    ContactData contact = new ContactData().withFirstName("Mo'").withLastName("Bunilla");
+    app.contact().create(contact,false);
+    assertThat(app.contact().count(), equalTo(before.size() ));
+    Contacts after = app.contact().all();
+    System.out.println( after);
+    assertThat(after, equalTo(
+            before));
   }
 }
