@@ -84,7 +84,7 @@
       <recent name="ru.stqa.pft.addressbook" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ContactModificationTest.testContactModification">
+  <component name="RunManager" selected="Gradle.ContactPhoneTest.testContactPhone">
     <configuration name="AddinNewConTest.addingNewContactBad" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -165,12 +165,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="GroupDeletionTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ContactPhoneTest.testContactPhone" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/../addressbook-web-tests" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ru.stqa.pft.addressbook.tests.GroupDeletionTests&quot;" />
+        <option name="scriptParameters" value="--tests &quot;ru.stqa.pft.addressbook.tests.ContactPhoneTest.testContactPhone&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -187,11 +187,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ContactPhoneTest.testContactPhone" />
         <item itemvalue="Gradle.ContactModificationTest.testContactModification" />
         <item itemvalue="Gradle.ContactDeletionTest.testContactDeletion" />
         <item itemvalue="Gradle.AddinNewConTest.addingNewContactBad" />
         <item itemvalue="Gradle.ContactDeletionTest" />
-        <item itemvalue="Gradle.GroupDeletionTests" />
       </list>
     </recent_temporary>
   </component>
@@ -256,22 +256,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="577" y="123" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1577793237322" />
-    <state width="1478" height="81" key="GridCell.Tab.0.bottom" timestamp="1579722530003">
+    <state width="1478" height="237" key="GridCell.Tab.0.bottom" timestamp="1579728174121">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="81" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579722530003" />
-    <state width="1478" height="81" key="GridCell.Tab.0.center" timestamp="1579722530003">
+    <state width="1478" height="237" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579728174121" />
+    <state width="1478" height="237" key="GridCell.Tab.0.center" timestamp="1579728174121">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="81" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1579722530003" />
-    <state width="1478" height="81" key="GridCell.Tab.0.left" timestamp="1579722530003">
+    <state width="1478" height="237" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1579728174121" />
+    <state width="1478" height="237" key="GridCell.Tab.0.left" timestamp="1579728174121">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="81" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1579722530003" />
-    <state width="1478" height="81" key="GridCell.Tab.0.right" timestamp="1579722530003">
+    <state width="1478" height="237" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1579728174121" />
+    <state width="1478" height="237" key="GridCell.Tab.0.right" timestamp="1579728174121">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="81" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1579722530003" />
+    <state width="1478" height="237" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1579728174121" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1578838493133">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
