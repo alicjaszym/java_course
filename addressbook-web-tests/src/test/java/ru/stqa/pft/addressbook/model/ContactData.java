@@ -16,6 +16,18 @@ public class ContactData {
   private String homePhone;
   private File photo;
 
+  public String getEmailSpecial() {
+    return emailSpecial;
+  }
+
+  public ContactData withEmailSpecial(String emailSpecial) {
+    this.emailSpecial = emailSpecial;
+    return this;
+  }
+
+  private String emailSpecial;
+
+
   public String getStreet() {
     return street;
   }
@@ -104,6 +116,7 @@ public class ContactData {
     this.id = id;
     return this;
   }
+
 
 
   @Override

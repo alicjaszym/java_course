@@ -14,14 +14,17 @@ import java.util.Set;
 
 public class ContactHelper extends HelperBase {
 
-  public ContactHelper(WebDriver wd){
+  public ContactHelper(WebDriver wd) {
     super(wd);
   }
 
-  public void initContactCreation(){
+  public void initContactCreation() {
     click(By.linkText("add new"));
   }
 
+  public void clickSpecial(){
+  click(By.xpath("//a[@href='view.php?id=109']"));
+  }
   public void fillContactForm(ContactData contactData, boolean creation){
     type(By.name("firstname"),contactData.getFirstName());
     type(By.name("lastname"),contactData.getLastName());
@@ -88,6 +91,10 @@ public class ContactHelper extends HelperBase {
             .withHomePhone(home).withMobilePhone(mobilePhone).withWorkPhone(work).withEmail(email).withStreet(street);
   }
 
+  public ContactData infoFromSpecialPlace(ContactData contact){
+    String emailSpecial = wd.findElement(By.xpath("//a[@href='mailto:lololo@yopmail.com']")).getAttribute("value");
+    return new ContactData().withEmailSpecial(emailSpecial);
+  }
 
   public void  initContactModificationById(int id){
     WebElement checkbox = wd.findElement(By.cssSelector(String.format("input[value='%s']",id)));
@@ -134,6 +141,9 @@ public class ContactHelper extends HelperBase {
   //  contactCache=null;
     clickOnUpdateButton();
   }
+
+
+
 
   public Set<ContactData> all(){
   Set<ContactData> contacts = new HashSet<ContactData>();
