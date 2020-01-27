@@ -68,7 +68,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../addressbook-web-tests/build.gradle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../addressbook-web-tests" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -84,7 +84,57 @@
       <recent name="ru.stqa.pft.addressbook" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.AddinNewConTest.addingNewContact">
+  <component name="RunManager" selected="Application.GroupDataGenerator">
+    <configuration name="ContactDataGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.pft.addressbook.generators.ContactDataGenerator" />
+      <module name="addressbook-web-tests.test" />
+      <option name="PROGRAM_PARAMETERS" value="-c 5 -f src/test/resources/contacts.csv" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../addressbook-web-tests/." />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.stqa.pft.addressbook.generators.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GroupDataGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.pft.addressbook.generators.GroupDataGenerator" />
+      <module name="addressbook-web-tests.test" />
+      <option name="PROGRAM_PARAMETERS" value="-c 10 -f src/test/resources/groups.csv" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../addressbook-web-tests/." />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.stqa.pft.addressbook.generators.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddinNewConTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../addressbook-web-tests" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;ru.stqa.pft.addressbook.tests.AddinNewConTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="AddinNewConTest.addingNewContact" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -105,12 +155,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AddinNewConTest.testCurrentDir" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GroupCreationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/../addressbook-web-tests" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ru.stqa.pft.addressbook.tests.AddinNewConTest.testCurrentDir&quot;" />
+        <option name="scriptParameters" value="--tests &quot;ru.stqa.pft.addressbook.tests.GroupCreationTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -125,12 +175,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestContactAddress.contactTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GroupCreationTest.groupCase" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/../addressbook-web-tests" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ru.stqa.pft.addressbook.tests.TestContactAddress.contactTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;ru.stqa.pft.addressbook.tests.GroupCreationTest.groupCase&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -145,53 +195,21 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestContactSpecial.checkSpecialContact" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/../addressbook-web-tests" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ru.stqa.pft.addressbook.tests.TestContactSpecial.checkSpecialContact&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="testContactEmail.emailTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/../addressbook-web-tests" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ru.stqa.pft.addressbook.tests.testContactEmail.emailTest&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
+    <list>
+      <item itemvalue="Application.ContactDataGenerator" />
+      <item itemvalue="Application.GroupDataGenerator" />
+      <item itemvalue="Gradle.AddinNewConTest.addingNewContact" />
+      <item itemvalue="Gradle.GroupCreationTest.groupCase" />
+      <item itemvalue="Gradle.GroupCreationTest" />
+      <item itemvalue="Gradle.AddinNewConTest" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.GroupCreationTest" />
+        <item itemvalue="Gradle.AddinNewConTest" />
         <item itemvalue="Gradle.AddinNewConTest.addingNewContact" />
-        <item itemvalue="Gradle.AddinNewConTest.testCurrentDir" />
-        <item itemvalue="Gradle.TestContactSpecial.checkSpecialContact" />
-        <item itemvalue="Gradle.testContactEmail.emailTest" />
-        <item itemvalue="Gradle.TestContactAddress.contactTest" />
+        <item itemvalue="Gradle.GroupCreationTest.groupCase" />
+        <item itemvalue="Application.GroupDataGenerator" />
       </list>
     </recent_temporary>
   </component>
@@ -240,6 +258,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="72" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1578234275852" />
+    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580159136414">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1580159136414" />
+    <state x="536" y="216" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580158437893">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="536" y="216" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1580158437893" />
     <state x="574" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1579809873923">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -252,42 +278,46 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="566" y="271" width="403" height="290" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1576440795192" />
-    <state x="577" y="123" key="FileChooserDialogImpl" timestamp="1577793237322">
+    <state x="303" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1580149568745">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="577" y="123" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1577793237322" />
-    <state width="1478" height="237" key="GridCell.Tab.0.bottom" timestamp="1580061377372">
+    <state x="303" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1580149568745" />
+    <state x="577" y="123" key="FileChooserDialogImpl" timestamp="1580063614242">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="237" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580061377372" />
-    <state width="1478" height="237" key="GridCell.Tab.0.center" timestamp="1580061377372">
+    <state x="577" y="123" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1580063614242" />
+    <state width="1478" height="152" key="GridCell.Tab.0.bottom" timestamp="1580159138799">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="237" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580061377372" />
-    <state width="1478" height="237" key="GridCell.Tab.0.left" timestamp="1580061377372">
+    <state width="1478" height="152" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580159138799" />
+    <state width="1478" height="152" key="GridCell.Tab.0.center" timestamp="1580159138799">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="237" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580061377372" />
-    <state width="1478" height="237" key="GridCell.Tab.0.right" timestamp="1580061377372">
+    <state width="1478" height="152" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580159138799" />
+    <state width="1478" height="152" key="GridCell.Tab.0.left" timestamp="1580159138799">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="237" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580061377372" />
-    <state width="1478" height="258" key="GridCell.Tab.1.bottom" timestamp="1580060103804">
+    <state width="1478" height="152" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580159138799" />
+    <state width="1478" height="152" key="GridCell.Tab.0.right" timestamp="1580159138799">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="258" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580060103804" />
-    <state width="1478" height="258" key="GridCell.Tab.1.center" timestamp="1580060103804">
+    <state width="1478" height="152" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580159138799" />
+    <state width="1478" height="258" key="GridCell.Tab.1.bottom" timestamp="1580066087037">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="258" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1580060103804" />
-    <state width="1478" height="258" key="GridCell.Tab.1.left" timestamp="1580060103804">
+    <state width="1478" height="258" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580066087037" />
+    <state width="1478" height="258" key="GridCell.Tab.1.center" timestamp="1580066087037">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="258" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1580060103804" />
-    <state width="1478" height="258" key="GridCell.Tab.1.right" timestamp="1580060103804">
+    <state width="1478" height="258" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1580066087037" />
+    <state width="1478" height="258" key="GridCell.Tab.1.left" timestamp="1580066087037">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="258" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1580060103804" />
+    <state width="1478" height="258" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1580066087037" />
+    <state width="1478" height="258" key="GridCell.Tab.1.right" timestamp="1580066087037">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1478" height="258" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1580066087037" />
     <state x="294" y="122" width="948" height="572" key="RefactorJ.ExtractClass" timestamp="1577802758547">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

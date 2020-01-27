@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.Contacts;
 
 import java.util.HashSet;
 import java.util.List;
@@ -163,7 +164,7 @@ public class ContactHelper extends HelperBase {
 return contacts;
   }
 
-  /*public Contacts all() {
+ /* public Contacts all() {
     if (contactCache != null) {
       return new Contacts(contactCache);
     }
@@ -180,13 +181,12 @@ return contacts;
     }
     return new Contacts(contactCache);
 
+  }*/
+    private Contacts contactCache = null;
 
 
-    private Contacts contactCache = null;*/
+  }
 
-
-
-    }
 
 
 
