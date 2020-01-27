@@ -1,5 +1,6 @@
 package ru.stqa.pft.addressbook.tests;
 
+import com.thoughtworks.xstream.XStream;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
@@ -11,6 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class AddinNewConTest extends TestBase {
 
@@ -18,14 +20,17 @@ public class AddinNewConTest extends TestBase {
   public Iterator<Object[]> validContacts() throws IOException {
     List<Object[]> list = new ArrayList<Object[]>();
   // list.add(new Object[]{new ContactData().withFirstName("firstname1").withLastName("lastname1").withPhone("phone1")});
-    BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.csv")));
+    BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.xml")));
+    String xml ="";
     String line = reader.readLine();
     while (line != null) {
-     String [] split = line.split(";");
-     list.add(new Object[]{new ContactData().withFirstName(split[0]).withLastName(split[1]).withPhone(split[2])});
+      xml += line;
       line = reader.readLine();
     }
-    return list.iterator();
+    XStream xstream = new XStream();
+    xstream.processAnnotations(ContactData.class);
+    List<ContactData> contact =(List<ContactData>)xstream.fromXML(xml);
+    return contact.stream().map((g)-> new Object[]{g}).collect(Collectors.toList()).iterator();
   }
 
 
