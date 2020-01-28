@@ -57,19 +57,20 @@ public class GroupDataGenerator {
     Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation()
             .create();
     String json = gson.toJson(groups);
-    Writer writer = new FileWriter(file);
-    writer.write(json);
-    writer.close();
+    try(  Writer writer = new FileWriter(file)){
+      writer.write(json);
+    }
   }
 
   private void saveAsXml(List<GropupData> groups, File file) throws IOException {
     XStream xstream = new XStream();
     xstream.processAnnotations(GropupData.class);
     String xml = xstream.toXML(groups);
-    Writer writer = new FileWriter(file);
-    writer.write(xml);
-    writer.close();
+    try(  Writer writer = new FileWriter(file)){
+      writer.write(xml);
+    }
   }
+
 
   private void saveAsCsv(List<GropupData> groups, File file) throws IOException {
     System.out.println(new File(".").getAbsolutePath());
