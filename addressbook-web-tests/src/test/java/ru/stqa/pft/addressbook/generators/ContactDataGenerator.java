@@ -84,7 +84,7 @@ public class ContactDataGenerator {
     writer.close();
   }
 
-  private  List<ContactData> generateContacts(int count) {
+  private  List<ContactData> generateContacts(int count) throws IOException {
 
       List<ContactData> contacts = new ArrayList<ContactData>();
       for (int i=0; i <count; i++){

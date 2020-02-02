@@ -5,31 +5,31 @@ import com.google.common.collect.ForwardingSet;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Groups extends ForwardingSet<GropupData> {
+public class Groups extends ForwardingSet<GroupData> {
 
-  private Set<GropupData> delegate;
+  private Set<GroupData> delegate;
 
   public Groups(Groups groups) {
-    this.delegate = new HashSet<GropupData>(groups.delegate);
+    this.delegate = new HashSet<GroupData>(groups.delegate);
   }
 
   public Groups(){
-    this.delegate =new HashSet<GropupData>();
+    this.delegate =new HashSet<GroupData>();
   }
 
   @Override
-  protected Set<GropupData> delegate() {
+  protected Set<GroupData> delegate() {
 
     return delegate;
   }
 
-  public Groups withAdded(GropupData group) {
+  public Groups withAdded(GroupData group) {
     Groups groups = new Groups(this);
     groups.add(group);
     return groups;
   }
 
-  public Groups without(GropupData group) {
+  public Groups without(GroupData group) {
     Groups groups = new Groups(this);
     groups.remove(group);
     return groups;

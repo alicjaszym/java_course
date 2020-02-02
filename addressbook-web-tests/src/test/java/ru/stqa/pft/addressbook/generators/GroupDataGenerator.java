@@ -6,7 +6,7 @@ import com.beust.jcommander.ParameterException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.thoughtworks.xstream.XStream;
-import ru.stqa.pft.addressbook.model.GropupData;
+import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -41,7 +41,7 @@ public class GroupDataGenerator {
 }
 
   private void run() throws IOException {
-    List<GropupData> groups = generateGroups(count);
+    List<GroupData> groups = generateGroups(count);
     if (format.equals("csv")) {
       saveAsCsv(groups, new File(file));
     } else if (format.equals("xml")) {
@@ -53,7 +53,7 @@ public class GroupDataGenerator {
     }
   }
 
-  private void saveAsJson(List<GropupData> groups, File file) throws IOException {
+  private void saveAsJson(List<GroupData> groups, File file) throws IOException {
     Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation()
             .create();
     String json = gson.toJson(groups);
@@ -62,9 +62,9 @@ public class GroupDataGenerator {
     }
   }
 
-  private void saveAsXml(List<GropupData> groups, File file) throws IOException {
+  private void saveAsXml(List<GroupData> groups, File file) throws IOException {
     XStream xstream = new XStream();
-    xstream.processAnnotations(GropupData.class);
+    xstream.processAnnotations(GroupData.class);
     String xml = xstream.toXML(groups);
     try(  Writer writer = new FileWriter(file)){
       writer.write(xml);
@@ -72,20 +72,20 @@ public class GroupDataGenerator {
   }
 
 
-  private void saveAsCsv(List<GropupData> groups, File file) throws IOException {
+  private void saveAsCsv(List<GroupData> groups, File file) throws IOException {
     System.out.println(new File(".").getAbsolutePath());
     Writer writer = new FileWriter(file);
-    for(GropupData group:groups){
+    for(GroupData group:groups){
       writer.write(String.format("%s;%s;%s\n",group.getName(),group.getHeader(),
               group.getFooter()));
     }
     writer.close();
   }
 
-  private  List<GropupData> generateGroups(int count) {
-    List<GropupData> groups = new ArrayList<GropupData>();
+  private  List<GroupData> generateGroups(int count) {
+    List<GroupData> groups = new ArrayList<GroupData>();
     for (int i=0; i <count; i++){
-      groups.add(new GropupData().withName(String.format("test %s",i))
+      groups.add(new GroupData().withName(String.format("test %s",i))
       .withtHeader(String.format("header %s",i)).withFooter(String.format("footer %s",i)));
     }
    return groups;

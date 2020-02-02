@@ -8,8 +8,12 @@ import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Properties;
 import java.util.Set;
 
 
@@ -79,7 +83,7 @@ public class ContactHelper extends HelperBase {
     click(By.linkText("home"));
   }
 
-  public ContactData infoFromEditForm(ContactData contact){
+  public ContactData infoFromEditForm(ContactData contact) throws IOException {
     initContactModificationById(contact.getId());
     String firstname = wd.findElement(By.name("firstname")).getAttribute("value");
     String lastname = wd.findElement(By.name("lastname")).getAttribute("value");
@@ -147,8 +151,12 @@ public class ContactHelper extends HelperBase {
 
 
 
-  public Set<ContactData> all(){
-  Set<ContactData> contacts = new HashSet<ContactData>();
+  public Set<ContactData> all() throws IOException {
+    Properties properties = new Properties();
+    String target = System.getProperty("target", "local" );
+    properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties",target))));
+
+    Set<ContactData> contacts = new HashSet<ContactData>();
   List<WebElement> rows = wd.findElements(By.name("entry"));
   for (WebElement row:rows){
     List<WebElement> cells = row.findElements(By.tagName("td"));
@@ -158,8 +166,8 @@ public class ContactHelper extends HelperBase {
     String street= cells.get(3).getText();
     String email= cells.get(4).getText();
     String[] phones=cells.get(5).getText().split("\n");
-    contacts.add(new ContactData().withId(id).withFirstName(firstname).withLastName(lastname).withEmail(email)
-         .withStreet(street).withHomePhone(phones[0]).withMobilePhone(phones[1]).withWorkPhone(phones[2]));
+    contacts.add(new ContactData().withId(id).withFirstName(properties.getProperty("web.accountFirstName")).withLastName(properties.getProperty("web.accountLastName")).withEmail(email)
+         .withStreet(properties.getProperty("web.accountStreet")).withHomePhone(phones[0]).withMobilePhone(phones[1]).withWorkPhone(phones[2]));
   }
 return contacts;
   }

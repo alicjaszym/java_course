@@ -3,7 +3,7 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import ru.stqa.pft.addressbook.model.GropupData;
+import ru.stqa.pft.addressbook.model.GroupData;
 import ru.stqa.pft.addressbook.model.Groups;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class GroupHelper extends HelperBase {
       click(By.linkText("group page"));
     }
 
-  public void fillTheForm(GropupData gropupData) {
+  public void fillTheForm(GroupData gropupData) {
     type(By.name("group_name"), gropupData.getName());
     type(By.name("group_header"), gropupData.getHeader());
     type(By.name("group_footer"), gropupData.getFooter());
@@ -52,7 +52,7 @@ public class GroupHelper extends HelperBase {
 
 
 
-  public void create(GropupData group) {
+  public void create(GroupData group) {
    initCase();
    fillTheForm(group);
    submitFormButton();
@@ -61,7 +61,7 @@ public class GroupHelper extends HelperBase {
   }
 
 
-  public void modify( GropupData group) {
+  public void modify( GroupData group) {
     selectGroupById(group.getId());
     initGroupModification();
     fillTheForm(group);
@@ -83,7 +83,7 @@ public int count(){
     for(WebElement element:elements){
       String name= element.getText();
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-      groupCache.add(new GropupData().withId(id).withName(name));
+      groupCache.add(new GroupData().withId(id).withName(name));
       System.out.println(groupCache.size());
     }
     return new Groups(groupCache);
@@ -97,7 +97,7 @@ public int count(){
   private Groups groupCache=null;
 
 
-  public void delete(GropupData group) {
+  public void delete(GroupData group) {
     selectGroupById(group.getId());
     deleteSelectedGroup();
     groupCache=null;

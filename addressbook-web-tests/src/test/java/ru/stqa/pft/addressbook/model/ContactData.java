@@ -3,28 +3,67 @@ package ru.stqa.pft.addressbook.model;
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import org.hibernate.annotations.Type;
 
+import javax.persistence.*;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Objects;
+import java.util.Properties;
 
 
 @XStreamAlias("contact")
+@Entity
+@Table(name="addressbook")
 public class ContactData {
   @XStreamOmitField
+  @Id
+  @Column(name = "id")
   private  int id= Integer.MAX_VALUE;
   @Expose
+  @Column(name = "firstname")
   private  String firstName;
+  @Transient
   private  String secondName;
   @Expose
+  @Column(name = "lastname")
   private  String lastName;
+  @Transient
   private  String address;
-  @Expose
+  @Transient
   private  String phone;
+  @Transient
   private  String group;
+  @Expose
+  @Column(name = "mobile")
+  @Type(type="text")
   private String mobilePhone;
+  @Expose
+  @Column(name = "work")
+  @Type(type="text")
   private String workPhone;
+  @Expose
+  @Column(name = "home")
+  @Type(type="text")
   private String homePhone;
-  private File photo;
+
+  @Override
+  public String toString() {
+    return "ContactData{" +
+            "id=" + id +
+            ", firstName='" + firstName + '\'' +
+            ", lastName='" + lastName + '\'' +
+            '}';
+  }
+
+  @Column(name="photo")
+  @Type(type="text")
+  private String photo;
+
+
+  public ContactData() {
+  }
 
   public String getEmailSpecial() {
     return emailSpecial;
@@ -61,15 +100,18 @@ public class ContactData {
   private String email;
 
   public File getPhoto() {
-    return photo;
+    return new File(photo);
   }
 
   public ContactData withPhoto(File photo) {
-    this.photo = photo;
+    this.photo= photo.getPath();
     return this;
   }
 
-  public ContactData withFirstName(String firstName) {
+  public ContactData withFirstName(String firstName) throws IOException {
+    Properties properties = new Properties();
+    String target = System.getProperty("target", "local" );
+    properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties",target))));
     this.firstName = firstName;
     return this;
   }
@@ -145,21 +187,12 @@ public class ContactData {
     return Objects.hash(id, firstName, lastName, mobilePhone);
   }
 
-  @Override
-  public String toString() {
-    return "ContactData{" +
-            "id='" + id + '\'' +
-            ", firstName='" + firstName + '\'' +
-            ", lastName='" + lastName + '\'' +
-            ", mobilePhone='" + mobilePhone + '\'' +
-            '}';
-  }
-
   public int getId() {
     return id;
   }
 
-  public String getFirstName() {
+  public String getFirstName()  {
+
     return firstName;
   }
 

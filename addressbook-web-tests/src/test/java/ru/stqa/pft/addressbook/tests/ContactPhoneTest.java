@@ -3,13 +3,15 @@ package ru.stqa.pft.addressbook.tests;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 
+import java.io.IOException;
+
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ContactPhoneTest extends TestBase {
 
   @Test
-  public void testContactPhone(){
+  public void testContactPhone() throws IOException {
     app.contact().clickOnHome();
     ContactData contact= app.contact().all().iterator().next();
     if (app.contact().all().size()==0) {

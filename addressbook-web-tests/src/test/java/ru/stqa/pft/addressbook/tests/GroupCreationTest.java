@@ -5,7 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import com.thoughtworks.xstream.XStream;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import ru.stqa.pft.addressbook.model.GropupData;
+import ru.stqa.pft.addressbook.model.GroupData;
 import ru.stqa.pft.addressbook.model.Groups;
 
 import java.io.BufferedReader;
@@ -31,8 +31,8 @@ public class GroupCreationTest extends TestBase {
         line = reader.readLine();
       }
       XStream xstream = new XStream();
-      xstream.processAnnotations(GropupData.class);
-      List<GropupData> group = (List<GropupData>) xstream.fromXML(xml);
+      xstream.processAnnotations(GroupData.class);
+      List<GroupData> group = (List<GroupData>) xstream.fromXML(xml);
       return group.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
     }
   }
@@ -48,7 +48,7 @@ public class GroupCreationTest extends TestBase {
         line = reader.readLine();
       }
       Gson gson = new Gson();
-      List<GropupData> groups = gson.fromJson(json, new TypeToken<List<GropupData>>() {
+      List<GroupData> groups = gson.fromJson(json, new TypeToken<List<GroupData>>() {
       }.getType());
       return groups.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
     }
@@ -56,7 +56,7 @@ public class GroupCreationTest extends TestBase {
 
 
   @Test(dataProvider = "validGroupsFromJson")
-  public void groupCase(GropupData group) throws Exception {
+  public void groupCase(GroupData group) throws Exception {
 
       app.goTo().groupPage();
       Groups before = app.group().all();
@@ -73,7 +73,7 @@ public class GroupCreationTest extends TestBase {
   public void groupCaseBad() throws Exception {
     app.goTo().groupPage();
     Groups before = app.group().all();
-    GropupData group = new GropupData().withName("Manana'");
+    GroupData group = new GroupData().withName("Manana'");
     app.group().create(group);
     assertThat(app.group().count(), equalTo(before.size()));
     Groups after = app.group().all();
