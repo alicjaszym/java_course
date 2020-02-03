@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.addressbook.tests.HbConnectionTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-02-01T14:08:12" hostname="DESKTOP-96R034H" time="0.001">
+<testsuite name="ru.stqa.pft.addressbook.tests.HbConnectionTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-02-03T16:05:22" hostname="DESKTOP-96R034H" time="0.004">
   <properties/>
-  <testcase name="testHbConnetionCon" classname="ru.stqa.pft.addressbook.tests.HbConnectionTest" time="0.001">
+  <testcase name="testHbConnetionCon" classname="ru.stqa.pft.addressbook.tests.HbConnectionTest" time="0.004">
     <failure message="java.lang.NullPointerException" type="java.lang.NullPointerException">java.lang.NullPointerException
 	at ru.stqa.pft.addressbook.tests.HbConnectionTest.testHbConnetionCon(HbConnectionTest.java:47)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
