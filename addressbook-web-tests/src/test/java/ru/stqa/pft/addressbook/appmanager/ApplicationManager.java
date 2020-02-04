@@ -26,6 +26,9 @@ public class ApplicationManager {
   private final Properties properties;
 
   WebDriver wd;
+  private DbHelper dbHelper
+
+          ;
 
   public ApplicationManager(String browser)  {
     this.browser=browser;
@@ -56,12 +59,14 @@ public class ApplicationManager {
     sessionHelper = new SessionHelper(wd);
     contactHelper = new ContactHelper(wd);
     sessionHelper.login(properties.getProperty("web.adminLogin"),properties.getProperty("web.adminPassword"));
+    dbHelper = new DbHelper();
   }
 
   public void logout() {
     wd.findElement(By.linkText("Logout")).click();
   }
-
+  public DbHelper db(){
+    return dbHelper;}
   public void stop() {
    wd.quit();
   }

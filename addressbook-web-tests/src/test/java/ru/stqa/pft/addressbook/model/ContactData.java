@@ -22,12 +22,12 @@ public class ContactData {
   @Column(name = "id")
   private  int id= Integer.MAX_VALUE;
   @Expose
-  @Column(name = "firstname")
+  @Column(name = "firstname", columnDefinition = "LONGTEXT")
   private  String firstName;
   @Transient
   private  String secondName;
   @Expose
-  @Column(name = "lastname")
+  @Column(name = "lastname", columnDefinition = "LONGTEXT")
   private  String lastName;
   @Transient
   private  String address;
@@ -36,17 +36,30 @@ public class ContactData {
   @Transient
   private  String group;
   @Expose
-  @Column(name = "mobile")
-  @Type(type="text")
+  @Column(name = "mobile", columnDefinition = "LONGTEXT")
+   @Type(type="varchar($l)")
+  //@Transient
   private String mobilePhone;
-  @Expose
-  @Column(name = "work")
-  @Type(type="text")
+  //@Transient
+   @Expose
+  @Column(name = "work", columnDefinition = "LONGTEXT")
+  @Type(type="varchar($l)")
   private String workPhone;
+  // @Transient
   @Expose
-  @Column(name = "home")
-  @Type(type="text")
+  @Column(name = "work", columnDefinition = "LONGTEXT")
+  @Type(type="varchar($l)")
   private String homePhone;
+
+  @Column(name="photo")
+  @Type(type="text")
+  private String photo;
+  @Transient
+  private String street;
+  @Transient
+  private String emailSpecial;
+  @Transient
+  private String email;
 
   @Override
   public String toString() {
@@ -57,9 +70,7 @@ public class ContactData {
             '}';
   }
 
-  @Column(name="photo")
-  @Type(type="text")
-  private String photo;
+
 
 
   public ContactData() {
@@ -74,7 +85,6 @@ public class ContactData {
     return this;
   }
 
-  private String emailSpecial;
 
 
   public String getStreet() {
@@ -86,7 +96,7 @@ public class ContactData {
     return this;
   }
 
-  private String street;
+
 
   public String getEmail() {
     return email;
@@ -97,7 +107,7 @@ public class ContactData {
     return this;
   }
 
-  private String email;
+
 
   public File getPhoto() {
     return new File(photo);
