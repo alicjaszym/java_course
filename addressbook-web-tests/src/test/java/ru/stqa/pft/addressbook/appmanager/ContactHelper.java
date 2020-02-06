@@ -33,7 +33,7 @@ public class ContactHelper extends HelperBase {
   public void fillContactForm(ContactData contactData, boolean creation){
     type(By.name("firstname"),contactData.getFirstName());
     type(By.name("lastname"),contactData.getLastName());
-    attach(By.name("photo"),contactData.getPhoto());
+   // attach(By.name("photo"),contactData.getPhoto());
 
     if(creation){
       if(contactData.getGroup()!=null){
@@ -172,7 +172,7 @@ public class ContactHelper extends HelperBase {
 return contacts;
   }
 
- /* public Contacts all() {
+ public Contacts alll() throws IOException {
     if (contactCache != null) {
       return new Contacts(contactCache);
     }
@@ -189,9 +189,19 @@ return contacts;
     }
     return new Contacts(contactCache);
 
-  }*/
+  }
     private Contacts contactCache = null;
 
+  public void selectContactById(int id) {
+    wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
+  }
+
+  public void delete(ContactData contact) {
+    selectContactById(contact.getId());
+    deleteContact();
+    contactCache=null;
+    clickOnHome();
+  }
 
   }
 

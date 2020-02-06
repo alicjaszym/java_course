@@ -3,7 +3,6 @@ package ru.stqa.pft.addressbook.model;
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.File;
@@ -35,24 +34,46 @@ public class ContactData {
   private  String phone;
   @Transient
   private  String group;
-  @Expose
-  @Column(name = "mobile", columnDefinition = "LONGTEXT")
-   @Type(type="varchar($l)")
-  //@Transient
+  // @Expose
+  // @Column(name = "mobile", columnDefinition = "LONGTEXT")
+   //@Type(type="varchar($l)")
+  @Transient
   private String mobilePhone;
-  //@Transient
-   @Expose
-  @Column(name = "work", columnDefinition = "LONGTEXT")
-  @Type(type="varchar($l)")
+  @Transient
+  // @Expose
+  //@Column(name = "work", columnDefinition = "LONGTEXT")
+  //@Type(type="varchar($l)")
   private String workPhone;
-  // @Transient
-  @Expose
-  @Column(name = "work", columnDefinition = "LONGTEXT")
-  @Type(type="varchar($l)")
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    ContactData that = (ContactData) o;
+    return id == that.id &&
+            Objects.equals(firstName, that.firstName) &&
+            Objects.equals(secondName, that.secondName) &&
+            Objects.equals(lastName, that.lastName) &&
+            Objects.equals(address, that.address) &&
+            Objects.equals(phone, that.phone) &&
+            Objects.equals(group, that.group) &&
+            Objects.equals(street, that.street) &&
+            Objects.equals(emailSpecial, that.emailSpecial) &&
+            Objects.equals(email, that.email);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, firstName, secondName, lastName, address, phone, group, street, emailSpecial, email);
+  }
+
+  @Transient
+  // @Expose
+  // @Column(name = "work", columnDefinition = "LONGTEXT")
+  //@Type(type="varchar($l)")
   private String homePhone;
 
-  @Column(name="photo")
-  @Type(type="text")
+  @Transient
   private String photo;
   @Transient
   private String street;
@@ -179,23 +200,6 @@ public class ContactData {
     return this;
   }
 
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    ContactData that = (ContactData) o;
-    return id == that.id &&
-            Objects.equals(firstName, that.firstName) &&
-            Objects.equals(lastName, that.lastName) &&
-            Objects.equals(mobilePhone, that.mobilePhone);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(id, firstName, lastName, mobilePhone);
-  }
 
   public int getId() {
     return id;
