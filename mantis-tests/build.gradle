@@ -1,0 +1,29 @@
+apply plugin: 'java'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+dependencies{
+    compile "org.testng:testng:6.9.10"
+    compile "org.seleniumhq.selenium:selenium-java:4.0.0-alpha-3"
+    compile "org.hamcrest:hamcrest:2.2"
+
+
+
+
+}
+        test {
+            useTestNG()
+            scanForTestClasses = false
+            include '**/*'
+
+            beforeTest { descriptor ->
+                logger.lifecycle("Gradle running test: ${descriptor}")
+            }
+        }
+
+
+
+

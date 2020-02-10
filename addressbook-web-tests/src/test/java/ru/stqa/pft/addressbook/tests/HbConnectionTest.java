@@ -18,41 +18,42 @@ public class HbConnectionTest {
 
   @BeforeClass
 
-  protected void setUp() throws Exception{
+  protected void setUp() throws Exception {
 
-  final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
-          .configure() // configures settings from hibernate.cfg.xml
-          .build();
-      try {
-    sessionFactory = new MetadataSources( registry ).buildMetadata().buildSessionFactory();
+    final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+            .configure() // configures settings from hibernate.cfg.xml
+            .build();
+    try {
+      sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
+    } catch (Exception e) {
+      e.printStackTrace();
+      StandardServiceRegistryBuilder.destroy(registry);
+    }
   }
-      catch (Exception e) {
-    e.printStackTrace();
-    StandardServiceRegistryBuilder.destroy( registry );
-  }
-}
+
   @Test
   public void testHbConnetion() {
     Session session = sessionFactory.openSession();
     session.beginTransaction();
-    List<GroupData> result = session.createQuery( "from GroupData" ).list();
-    for ( GroupData group :  result ) {
-      System.out.println( group );
+    List<GroupData> result = session.createQuery("from GroupData").list();
+    for (GroupData group : result) {
+      System.out.println(group);
     }
     session.getTransaction().commit();
     session.close();
-    }
+  }
+
   @Test
   public void testHbConnetionCon() {
     Session session = sessionFactory.openSession();
     session.beginTransaction();
-    List<ContactData> result = session.createQuery( "from ContactData where deprecated='0000-00-00'" ).list();
-    for ( ContactData contact :  result ) {
-      System.out.println( contact);
-    }
+    List<ContactData> result = session.createQuery("from ContactData where deprecated='0000-00-00'").list();
     session.getTransaction().commit();
     session.close();
+    for (ContactData contact : result) {
+      System.out.println(contact);
+      System.out.println(contact.getGroups());
+    }
   }
-  }
-
+}
 

@@ -60,6 +60,7 @@ public class GroupCreationTest extends TestBase {
 
       app.goTo().groupPage();
       Groups before = app.db().groups();
+
       app.group().create(group);
       assertThat(app.group().count(), equalTo(before.size() + 1));
       Groups after = app.db().groups();

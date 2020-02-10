@@ -8,8 +8,10 @@ import javax.persistence.*;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Properties;
+import java.util.Set;
 
 
 @XStreamAlias("contact")
@@ -32,8 +34,7 @@ public class ContactData {
   private  String address;
   @Transient
   private  String phone;
-  @Transient
-  private  String group;
+
   // @Expose
   // @Column(name = "mobile", columnDefinition = "LONGTEXT")
    //@Type(type="varchar($l)")
@@ -44,6 +45,13 @@ public class ContactData {
   //@Column(name = "work", columnDefinition = "LONGTEXT")
   //@Type(type="varchar($l)")
   private String workPhone;
+  private String FirstName;
+
+  @ManyToMany(fetch = FetchType.EAGER)
+  @JoinTable(name="address_in_groups",
+          joinColumns = @JoinColumn(name="id"),inverseJoinColumns = @JoinColumn(name = "group_id"))
+  private Set<GroupData> groups=new HashSet<GroupData>();
+
 
   @Override
   public boolean equals(Object o) {
@@ -56,7 +64,7 @@ public class ContactData {
             Objects.equals(lastName, that.lastName) &&
             Objects.equals(address, that.address) &&
             Objects.equals(phone, that.phone) &&
-            Objects.equals(group, that.group) &&
+
             Objects.equals(street, that.street) &&
             Objects.equals(emailSpecial, that.emailSpecial) &&
             Objects.equals(email, that.email);
@@ -64,7 +72,7 @@ public class ContactData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstName, secondName, lastName, address, phone, group, street, emailSpecial, email);
+    return Objects.hash(id, firstName, secondName, lastName, address, phone, street, emailSpecial, email);
   }
 
   @Transient
@@ -92,7 +100,9 @@ public class ContactData {
   }
 
 
-
+  public Groups getGroups() {
+    return  new Groups(groups);
+  }
 
   public ContactData() {
   }
@@ -117,7 +127,10 @@ public class ContactData {
     return this;
   }
 
-
+  public ContactData withtFirstName(String FirstName) {
+    this.FirstName = FirstName;
+    return  this;
+  }
 
   public String getEmail() {
     return email;
@@ -190,10 +203,7 @@ public class ContactData {
     return this;
   }
 
-  public ContactData withGroup(String group) {
-    this.group = group;
-    return this;
-  }
+
 
   public ContactData withId(int id) {
     this.id = id;
@@ -228,7 +238,9 @@ public class ContactData {
     return phone;
   }
 
-  public String getGroup() {
-    return group;
+
+  public ContactData inGroup(GroupData group) {
+    groups.add(group);
+    return this;
   }
 }

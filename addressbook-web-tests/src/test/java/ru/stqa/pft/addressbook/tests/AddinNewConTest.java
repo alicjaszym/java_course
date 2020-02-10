@@ -7,6 +7,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.Groups;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -56,10 +57,12 @@ public class AddinNewConTest extends TestBase {
   
     @Test(dataProvider = "validContactsFromJson")
   public void addingNewContact(ContactData contact) throws Exception {
-
+        Groups groups = app.db().groups();
+        ContactData newContact=new ContactData().withFirstName("lo").withLastName("NO").withMobilePhone("123465")
+                .inGroup(groups.iterator().next());
         app.contact().initContactCreation();
+        app.contact().fillContactForm(newContact,true);
         Contacts before = app.db().contacts();
-        app.contact().fillContactForm(new ContactData().withFirstName("lo").withLastName("NO").withMobilePhone("123465"), false);
         app.contact().clickSubmitContactCreation();
         app.contact().clickOnHome();
         Contacts after = app.db().contacts();
