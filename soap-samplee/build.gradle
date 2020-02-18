@@ -1,0 +1,47 @@
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'org.testng:testng:6.9.10'
+
+    implementation 'com.sun.xml.bind:jaxb-xjc:2.3.0.1'
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+    implementation 'javax.xml.ws:jaxws-api:2.3.1'
+    implementation 'org.apache.cxf:cxf-rt-wsdl:3.2.7'
+    implementation 'javax.jws:javax.jws-api:1.1'
+    implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"
+    implementation "org.glassfish.jaxb:jaxb-runtime:2.3.2"
+}
+
+
+
+
+buildscript{
+    repositories{
+        jcenter()
+        mavenCentral()
+
+    }
+    dependencies {
+        classpath 'no.nils:wsdl2java:0.9'
+    }
+}
+
+apply plugin: 'no.nils.wsdl2java'
+
+
+wsdl2java {
+    generatedWsdlDir = file("src\\main\\java")
+    wsdlDir = file("src/main/resources") // define to support incremental build
+    wsdlsToGenerate = [   //  2d-array of wsdls and cxf-parameters
+                          ['C:\\java_course\\soap-samplee\\src\\main\\resources\\geoipservice.wsdl'],
+
+    ]
+}
+
+

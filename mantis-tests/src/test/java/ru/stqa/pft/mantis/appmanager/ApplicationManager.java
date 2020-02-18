@@ -19,8 +19,10 @@ public class ApplicationManager {
 
   private final Properties properties;
   private final String browser;
-  WebDriver wd;
-
+  private WebDriver wd;
+  private RegistrationHelper registrationHelper;
+  private FtpHelper ftp;
+  private MailHelper mailHelper;
 
   public ApplicationManager(String browser) {
     this.browser = browser;
@@ -32,19 +34,6 @@ public class ApplicationManager {
     String target = System.getProperty("target", "local");
     properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties", target))));
 
-
-    if (browser.equals(BrowserType.FIREFOX)) {
-      wd = new FirefoxDriver();
-    } else if (browser.equals(BrowserType.CHROME)) {
-      wd = new ChromeDriver();
-    } else if (browser.equals(BrowserType.IE)) {
-      wd = new InternetExplorerDriver();
-    } else if (browser.equals(BrowserType.EDGE)) {
-      wd = new EdgeDriver();
-    }
-
-    wd.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-    wd.get(properties.getProperty("web.baseUrl"));
   }
 
   public void logout() {
@@ -53,7 +42,9 @@ public class ApplicationManager {
 
 
   public void stop() {
-    wd.quit();
+    if (wd != null) {
+      wd.quit();
+    }
   }
 
   public boolean isElementPresent(By by) {
@@ -72,5 +63,45 @@ public class ApplicationManager {
   public String getProperty(String key){
     return properties.getProperty(key);
   }
+
+  public FtpHelper ftp(){
+    if (ftp==null){
+      ftp =new FtpHelper(this);
+    }
+   return ftp;
+  }
+
+
+  public RegistrationHelper registration() {
+   if(registrationHelper==null){
+     registrationHelper = new RegistrationHelper(this);
+   }
+    return registrationHelper ;
+  }
+
+  public WebDriver getDriver() {
+    if(wd ==null){
+
+      if (browser.equals(BrowserType.FIREFOX)) {
+        wd = new FirefoxDriver();
+      } else if (browser.equals(BrowserType.CHROME)) {
+        wd = new ChromeDriver();
+      } else if (browser.equals(BrowserType.IE)) {
+        wd = new InternetExplorerDriver();
+      } else if (browser.equals(BrowserType.EDGE)) {
+        wd = new EdgeDriver();
+      }
+     wd.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+      wd.get(properties.getProperty("web.baseUrl"));
+    }
+    return wd;
+  }
+
+public MailHelper mail() {
+  if (mailHelper == null) {
+    mailHelper = new MailHelper(this);
+  }
+  return mailHelper;
+}
 
 }

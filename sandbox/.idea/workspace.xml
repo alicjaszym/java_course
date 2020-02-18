@@ -20,6 +20,9 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+    <projectState path="$PROJECT_DIR$/../soap-samplee">
+      <ProjectState />
+    </projectState>
   </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
@@ -70,8 +73,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="jdk.selected.JAVA_MODULE" value="11" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mantis-tests/src/test/java/ru.stqa.pft.mantis.tests" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../soap-samplee/src/test/ru.stqa.pft.soap" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -79,14 +83,13 @@
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\java_course\mantis-tests\src\test\resources" />
-      <recent name="C:\java_course\mantis-tests\src\test" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="ru.stqa.java_course.sandbox" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\java_course\soap-samplee\src\test\ru.stqa.pft.soap" />
+      <recent name="C:\java_course\soap-samplee\src\test" />
+      <recent name="C:\java_course\soap-samplee\src\main\resources" />
       <recent name="C:\java_course\mantis-tests\src\test\java\ru.stqa.pft.mantis.tests" />
       <recent name="C:\java_course\mantis-tests\src\test" />
     </key>
@@ -94,8 +97,12 @@
       <recent name="ru.stqa.pft.addressbook.appmanager" />
       <recent name="ru.stqa.pft.addressbook" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\java_course\mantis-tests\src\test\resources" />
+      <recent name="C:\java_course\mantis-tests\src\test" />
+    </key>
   </component>
-  <component name="RunManager" selected="Gradle.HbConnectionTest.testHbConnetionCon">
+  <component name="RunManager" selected="Gradle.soap-samplee [wsdl2java]">
     <configuration name="ContactDataGenerator" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.stqa.pft.addressbook.generators.ContactDataGenerator" />
       <module name="addressbook-web-tests.test" />
@@ -111,52 +118,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContactDeletionTest.testContactDeletion" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/../addressbook-web-tests" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ru.stqa.pft.addressbook.tests.ContactDeletionTest.testContactDeletion&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="ContactModificationTest.testContactModification" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/../addressbook-web-tests" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="--tests &quot;ru.stqa.pft.addressbook.tests.ContactModificationTest.testContactModification&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="GroupDeletionTests.testGroupDeletion" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/../addressbook-web-tests" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ru.stqa.pft.addressbook.tests.GroupDeletionTests.testGroupDeletion&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -211,21 +178,59 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="soap-samplee [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../soap-samplee" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="soap-samplee [wsdl2java]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../soap-samplee" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="wsdl2java" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.ContactDataGenerator" />
       <item itemvalue="Gradle.ContactModificationTest.testContactModification" />
-      <item itemvalue="Gradle.ContactDeletionTest.testContactDeletion" />
-      <item itemvalue="Gradle.GroupDeletionTests.testGroupDeletion" />
       <item itemvalue="Gradle.GroupModificationTests.testGroupModification" />
       <item itemvalue="Gradle.HbConnectionTest.testHbConnetionCon" />
+      <item itemvalue="Gradle.soap-samplee [wsdl2java]" />
+      <item itemvalue="Gradle.soap-samplee [dependencies]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.soap-samplee [wsdl2java]" />
+        <item itemvalue="Gradle.soap-samplee [dependencies]" />
         <item itemvalue="Gradle.HbConnectionTest.testHbConnetionCon" />
         <item itemvalue="Gradle.GroupModificationTests.testGroupModification" />
         <item itemvalue="Gradle.ContactModificationTest.testContactModification" />
-        <item itemvalue="Gradle.GroupDeletionTests.testGroupDeletion" />
-        <item itemvalue="Gradle.ContactDeletionTest.testContactDeletion" />
       </list>
     </recent_temporary>
   </component>
@@ -270,10 +275,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="70" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1580841969473" />
-    <state x="361" y="72" key="#Project_Structure" timestamp="1581368471091">
+    <state x="361" y="72" key="#Project_Structure" timestamp="1582052899737">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="72" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1581368471091" />
+    <state x="361" y="72" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1582052899737" />
     <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581020787943">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -286,6 +291,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1581022339925" />
+    <state x="618" y="302" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1582052070476">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="618" y="302" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1582052070476" />
     <state x="477" y="166" key="#com.intellij.refactoring.memberPullUp.PullUpDialog" timestamp="1578251321684">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -298,26 +307,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="303" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1580559859219" />
-    <state x="577" y="123" key="FileChooserDialogImpl" timestamp="1581368449158">
+    <state x="577" y="123" key="FileChooserDialogImpl" timestamp="1582053851625">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="577" y="123" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1581368449158" />
-    <state width="1478" height="143" key="GridCell.Tab.0.bottom" timestamp="1581023929967">
+    <state x="577" y="123" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582053851625" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1582054394710">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="143" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581023929967" />
-    <state width="1478" height="143" key="GridCell.Tab.0.center" timestamp="1581023929967">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582054394710" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1582054394710">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="143" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1581023929967" />
-    <state width="1478" height="143" key="GridCell.Tab.0.left" timestamp="1581023929967">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582054394710" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1582054394709">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="143" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1581023929967" />
-    <state width="1478" height="143" key="GridCell.Tab.0.right" timestamp="1581023929967">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582054394709" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1582054394710">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="143" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1581023929967" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582054394710" />
     <state width="1478" height="258" key="GridCell.Tab.1.bottom" timestamp="1580561152919">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -350,18 +359,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="584" y="347" key="ReplaceDuplicatesPrompt/0.0.1536.824@0.0.1536.824" timestamp="1577900436114" />
-    <state x="277" y="0" key="SettingsEditor" timestamp="1581368685603">
+    <state x="277" y="0" key="SettingsEditor" timestamp="1582052555347">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1581368685603" />
+    <state x="277" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1582052555347" />
     <state x="583" y="194" key="chooseDestDirectoryDialog" timestamp="1576440795148">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="583" y="194" key="chooseDestDirectoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1576440795148" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1576514304459">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1582054108784">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1576514304459" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1582054108784" />
     <state x="420" y="83" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1577804108748">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -374,10 +383,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="169" width="538" height="495" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1579461023455" />
-    <state x="219" y="146" key="new project wizard" timestamp="1581368734704">
+    <state x="219" y="67" key="new project wizard" timestamp="1582051679357">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="219" y="146" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1581368734704" />
+    <state x="219" y="67" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1582051679357" />
     <state x="475" y="42" key="refactoring.ChangeSignatureDialog" timestamp="1579460049870">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
