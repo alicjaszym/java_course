@@ -24,6 +24,13 @@ dependencies{
     implementation "com.sun.xml.bind:jaxb-impl:2.2.11"
     implementation "javax.activation:activation:1.1.1"
 
+
+
+    test {
+        useTestNG()
+    }
+
+
 }
         test {
             useTestNG()
@@ -35,7 +42,7 @@ dependencies{
             }
         }
 
-/*
+
 task testGroups(type:Test) {
     useTestNG() {
         suites 'src/test/resources/testng-groups.xml '
@@ -43,9 +50,13 @@ task testGroups(type:Test) {
     if(project.hasProperty{'browser'}){
     systemPropety "browser","${browser}"
 }
-if(project.hasProperty{'target'}){
+   if(project.hasProperty{'target'}){
     systemPropety "target","${target}"
 }
+   if(project.hasProperty('verifyUI')){
+       systemPropety 'verifyUI' ,"${verifyUI}"
+   }
+
 }
 
 
@@ -60,4 +71,4 @@ task testContacts(type:Test) {
 if(project.hasProperty{'target'}){
     systemPropety "target","${target}"
 }
-}*/
+}
