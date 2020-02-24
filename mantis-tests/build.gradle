@@ -14,9 +14,8 @@ dependencies{
     compile "commons-net:commons-net:3.4"
     compile "org.subethamail:subethasmpt:3.1.7"
     testCompile group: 'org.subethamail', name: 'subethasmtp', version: '3.1.7'
-    compile "ru.lawen.verbalregex:java-verbal-expressions:1.4"
-    // https://mvnrepository.com/artifact/ru.lanwen.verbalregex/java-verbal-expressions
-    compile group: 'ru.lanwen.verbalregex', name: 'java-verbal-expressions', version: '1.4'
+    //compile "ru.lawen.verbalregex:java-verbal-expressions:1.4"
+
 
 
 
